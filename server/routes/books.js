@@ -30,17 +30,17 @@ router.get('/add', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
 
-  //   let newbook = book({
-  //     "title": "",
-  //     "price": "",
-  //     "author": "",
-  //     "genre": "",
-  // });
+    let newbook = book({
+      "title": "",
+      "price": "",
+      "author": "",
+      "genre": "",
+  });
 
-  // res.render('books/details', {
-  //   title: 'Add a Book',
-  //   books:newbook
-  //  });
+  res.render('books/details', {
+    title: 'Add a Book',
+    books:newbook
+   });
 
 });
 
@@ -50,25 +50,25 @@ router.post('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-  //   let newbook = book({
-  //     "Title": req.body.title,
-  //     "Price": req.body.price,
-  //     "Author": req.body.author,
-  //     "Genre": req.body.genre,
-  // });
+    let newbook = book({
+      "Title": req.body.title,
+      "Price": req.body.price,
+      "Author": req.body.author,
+      "Genre": req.body.genre,
+  });
 
-  // book.create(newbook, (err, book) =>{
-  //     if(err)
-  //     {
-  //         console.log(err);
-  //         res.end(err);
-  //     }
-  //     else
-  //     {
-  //         // refresh the contact list
-  //         res.redirect('/books');
-  //     }
-  // });
+  book.create(newbook, (err, book) =>{
+      if(err)
+      {
+          console.log(err);
+          res.end(err);
+      }
+      else
+      {
+          // refresh the contact list
+          res.redirect('/books');
+      }
+  });
 
 });
 
@@ -78,16 +78,16 @@ router.get('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-    // let id = req.params.id; //id of actual object
-    // book.findById(id, (err, editbook) => {
-    //   if (err) {
-    //     console.log(err);
-    //     res.end(err);
-    //   } else {
-    //     //show the edit view
-    //     res.render("books/details", { title: "Edit Book details", books: editbook });
-    //   }
-    // });
+    let id = req.params.id; //id of actual object
+    book.findById(id, (err, editbook) => {
+      if (err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        //show the edit view
+        res.render("books/details", { title: "Edit Book details", books: editbook });
+      }
+    });
     
 });
 
@@ -97,28 +97,28 @@ router.post('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-  //   let id = req.params.id
+    let id = req.params.id
 
-  //   let updatedBook = book({
-  //     "_id": id,
-  //     "Title": req.body.title,
-  //     "Price": req.body.price,
-  //     "Author": req.body.author,
-  //     "Genre": req.body.genre,
-  // });
+    let updatedBook = book({
+      "_id": id,
+      "Title": req.body.title,
+      "Price": req.body.price,
+      "Author": req.body.author,
+      "Genre": req.body.genre,
+  });
 
-  // book.updateOne({_id: id}, updatedBook, (err) => {
-  //     if(err)
-  //     {
-  //         console.log(err);
-  //         res.end(err);
-  //     }
-  //     else
-  //     {
-  //         // refresh the book list
-  //         res.redirect('/books');
-  //     }
-  // });
+  book.updateOne({_id: id}, updatedBook, (err) => {
+      if(err)
+      {
+          console.log(err);
+          res.end(err);
+      }
+      else
+      {
+          // refresh the book list
+          res.redirect('/books');
+      }
+  });
 
 });
 
@@ -128,20 +128,20 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
-    // let id = req.params.id;
+    let id = req.params.id;
 
-    //  book.remove({_id: id}, (err) => {
-    //      if(err)
-    //      {
-    //          console.log(err);
-    //          res.end(err);
-    //      }
-    //      else
-    //      {
-    //           // refresh the book list
-    //           res.redirect('/books');
-    //      }
-    //  });
+     book.remove({_id: id}, (err) => {
+         if(err)
+         {
+             console.log(err);
+             res.end(err);
+         }
+         else
+         {
+              // refresh the book list
+              res.redirect('/books');
+         }
+     });
 });
 
 
