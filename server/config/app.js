@@ -19,6 +19,10 @@ mongoDB.once('open', ()=> {
 });
 
 
+/*File name: COMM229-W2023-MIDTERM-301278498(app.js)
+  Author's name: Ariya Agnihothri
+  StudentID : 301278498
+  Web App name :Mid-Term Test*/
 // define routers
 let index = require('../routes/index'); // top level routes
 let books = require('../routes/books'); // routes for books

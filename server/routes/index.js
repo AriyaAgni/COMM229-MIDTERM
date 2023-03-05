@@ -1,3 +1,8 @@
+/*File name: COMM229-W2023-MIDTERM-301278498(index.js)
+  Author's name: Ariya Agnihothri
+  StudentID : 301278498
+  Web App name :Mid-Term Test*/
+
 // modules required for routing
 let express = require('express');
 let router = express.Router();
